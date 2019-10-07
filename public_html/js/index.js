@@ -14,8 +14,6 @@ async function init() {
     API.setDefaultHeaders({'Content-Type': 'application/json'});
     API.setDefaultBody({lang: 'en'});
     
-    callUser1Api();
-    
     /*API.get('users/2');
     API.post('posts/3');
     API.put('posts/4');
@@ -27,16 +25,16 @@ async function init() {
 init();
 
 
-function callUser1Api() {
-     API.get('users/1').then(function(result){
+
+
+window.callUser1Api = function callUser1Api() {
+    API.get('users/1').then(function(result){
         alert(`Result: ${result}`);
         console.log(result);
     }).catch(function(error){
         handleError(error);
     });
 }
-
-
 function handleError(error) {
     alert(`Error: ${error}`);
         console.log(error);
