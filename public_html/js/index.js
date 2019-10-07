@@ -28,13 +28,18 @@ init();
 
 
 window.callUser1Api = function callUser1Api() {
-    API.get('users/1').then(function(result){
-        alert(`Result: ${result}`);
-        console.log(result);
+    API.get('users/1').then(function(data){
+        handleSuccess(data)
     }).catch(function(error){
         handleError(error);
     });
 }
+
+function handleSuccess(data) {
+    alert("successful");
+        console.log(data);
+}
+
 function handleError(error) {
     alert(`Error: ${error}`);
         console.log(error);
