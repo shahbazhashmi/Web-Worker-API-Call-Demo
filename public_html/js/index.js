@@ -27,8 +27,16 @@ init();
 
 
 
-window.callUser1Api = function callUser1Api() {
+window.getDemoApi = function getDemoApi() {
     API.get('users/1').then(function(data){
+        handleSuccess(data)
+    }).catch(function(error){
+        handleError(error);
+    });
+}
+
+window.postDemoApi = function postDemoApi(requestObject) {
+    API.post('users/3', requestObject).then(function(data){
         handleSuccess(data)
     }).catch(function(error){
         handleError(error);
